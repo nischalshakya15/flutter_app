@@ -1,48 +1,51 @@
 import 'package:flutter/material.dart';
 
-class MyAppBar extends StatelessWidget {
-  MyAppBar({this.title});
+class CounterDisplay extends StatelessWidget {
+  final int count;
 
-  final Widget title;
+  CounterDisplay({this.count});
 
-  @override
   Widget build(BuildContext context) {
-    return Container(
-        height: 55.0,
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        decoration: BoxDecoration(color: Colors.blue[500]),
-        child: Row(
-          children: <Widget>[
-            IconButton(
-                icon: Icon(Icons.menu),
-                tooltip: 'Navigation Menu',
-                onPressed: null),
-            Expanded(child: title),
-            IconButton(
-                icon: Icon(Icons.search), tooltip: 'Search', onPressed: null)
-          ],
-        ));
+    return Text('Count:  $count');
   }
 }
 
-class MyScaffold extends StatelessWidget {
+class CounterIncrementor extends StatelessWidget {
+
+  CounterIncrementor({this.onPressed});
+
+  final VoidCallback onPressed;
+
+  Widget build(BuildContext context){
+    return RaisedButton(onPressed: onPressed, child: Text('Increment'));
+  }
+}
+
+class Counter extends StatefulWidget {
+  @override
+  _CounterState createState() => _CounterState();
+}
+
+class _CounterState extends State<Counter> {
+  int _counter = 0;
+
+  void _increment() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Material(
-        child: Column(
+    return Row(
       children: <Widget>[
-        MyAppBar(
-            title: Text('Flutter Demo',
-                style: Theme.of(context).primaryTextTheme.headline6)),
-        Expanded(
-            child: Center(
-          child: Text('Hello Nischal'),
-        ))
+        CounterIncrementor(onPressed: _increment),
+        CounterDisplay(count: _counter)
       ],
-    ));
+    );
   }
 }
 
 void main() {
-  runApp(MaterialApp(title: 'My app', home: MyScaffold()));
+  runApp(MaterialApp(title: 'CounterDemo', home: Counter()));
 }
