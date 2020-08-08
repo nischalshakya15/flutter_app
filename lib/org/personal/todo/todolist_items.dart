@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/org/personal/todo/todo.dart';
-import 'package:random_color/random_color.dart';
 
 typedef void HandleCompleteCallback(ToDo toDo);
 
@@ -12,9 +11,7 @@ class ToDoListItems extends StatelessWidget {
       : super(key: key);
 
   Color _getColor(BuildContext context) {
-    return toDo.isCompleted
-        ? Colors.black54
-        : Colors.redAccent;
+    return toDo.isCompleted ? Colors.black54 : Colors.redAccent;
   }
 
   TextStyle _getTextStyle() {

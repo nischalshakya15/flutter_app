@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/org/personal/todo/todo.dart';
 import 'package:flutter_app/org/personal/todo/todo_list.dart';
-
-import 'org/personal/todo/todo.dart';
 
 void main() {
   runApp(MaterialApp(
