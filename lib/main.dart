@@ -9,9 +9,9 @@ void main() {
       title: 'ToDo App',
       home: ToDoList(
         todos: <ToDo>[
-          ToDo(title: 'Make french fry', isCompleted: false),
+          ToDo(title: 'Make french fry', isCompleted: true),
           ToDo(title: 'Download Darksiders III update', isCompleted: false),
-          ToDo(title: 'Download Assassins Creed Odyssey for PS4', isCompleted: false),
+          ToDo(title: 'Download Assassins Creed Odyssey for PS4', isCompleted: true),
           ToDo(title: 'Download Red Dead Redemption for PS4', isCompleted: false)
         ],
       )));

@@ -21,6 +21,13 @@ class _ToDoListState extends State<ToDoList> {
           children: widget.todos.map((ToDo todo) {
         return ToDoListItems(toDo: todo);
       }).toList()),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print('button is pressed');
+          },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.blue
+      ),
     );
   }
 }
