@@ -12,6 +12,7 @@ void main() {
           ToDo(title: 'Make french fry', isCompleted: true),
           ToDo(title: 'Download Darksiders III update', isCompleted: false),
           ToDo(title: 'Download Assassins Creed Odyssey for PS4', isCompleted: true),
+          ToDo(title: 'Download Red Dead Redemption for PS4', isCompleted: false),
           ToDo(title: 'Download Red Dead Redemption for PS4', isCompleted: false)
         ],
       )));

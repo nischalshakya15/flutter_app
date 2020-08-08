@@ -13,21 +13,27 @@ class ToDoList extends StatefulWidget {
 }
 
 class _ToDoListState extends State<ToDoList> {
+  void _handleComplete(ToDo toDo) {
+    setState(() {
+      widget.todos[widget.todos.indexOf(toDo)].isCompleted =
+          widget.todos[widget.todos.indexOf(toDo)].isCompleted ? false : true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Todo Application')),
       body: ListView(
           children: widget.todos.map((ToDo todo) {
-        return ToDoListItems(toDo: todo);
+        return ToDoListItems(toDo: todo, handleComplete: _handleComplete);
       }).toList()),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('button is pressed');
+          onPressed: () {
+            print('button is pressed');
           },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.blue
-      ),
+          child: Icon(Icons.add),
+          backgroundColor: Colors.blue),
     );
   }
 }

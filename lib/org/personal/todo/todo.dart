@@ -1,6 +1,6 @@
 class ToDo {
-  final String title;
-  final bool isCompleted;
+  String title;
+  bool isCompleted;
 
   ToDo({this.title, this.isCompleted});
 }
